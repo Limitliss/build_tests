@@ -1,6 +1,9 @@
 const add = require("./add");
 
 function testAdd() {
+  if (process.versions.node.split(".")[0] === "22") {
+    throw "OMG ERROR";
+  }
   console.assert(add(1, 2) === 3, "Test Case 1 Failed");
   console.assert(add(-1, 1) === 0, "Test Case 2 Failed");
   console.assert(add(0, 0) === 0, "Test Case 3 Failed");
