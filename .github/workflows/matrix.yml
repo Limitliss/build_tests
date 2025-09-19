@@ -1,4 +1,4 @@
-name: Node.js CI
+name: Matrix
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [main]
 
 jobs:
-  error_cancel:
+  matrix_error_cancel:
     runs-on: ubuntu-latest
 
     strategy:
@@ -22,7 +22,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: npm install
       - run: node test_add.js
-  success:
+  matrix_success:
     runs-on: ubuntu-latest
 
     steps:
